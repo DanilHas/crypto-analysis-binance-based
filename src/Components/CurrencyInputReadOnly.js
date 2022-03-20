@@ -1,8 +1,12 @@
 import React from "react";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { useSelector } from "react-redux";
+import Big from "big.js";
 
 export default function CurrencyInputReadOnly() {
+  const convertValue = useSelector((state) => state.convertValue);
+
   return (
     <Box
       component="form"
@@ -15,10 +19,10 @@ export default function CurrencyInputReadOnly() {
         <TextField
           id="outlined-read-only-input"
           label="Get"
-          defaultValue={0}
           InputProps={{
             readOnly: true,
           }}
+          value={new Big(convertValue).toFixed(3)}
         />
          </Box>
   );

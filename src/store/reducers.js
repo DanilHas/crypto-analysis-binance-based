@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
+import { convertValueReducer } from "./convertValue-reducer";
 import { cryptoReducer } from "./crypto-reducer";
+import { cryptosPriceReducer } from "./cryptosPrice-reducer";
 import { currencyReducer } from "./currency-reducer";
 import { currencyClickToEnterReducer } from "./currencyClickToEnter-reducer";
 import { secondCurrencyClickToEnterReducer } from "./secondCurrencyClickToEnterReducer";
@@ -13,4 +15,6 @@ export const rootReducer = combineReducers({
     secondCurrency: secondCurrencyReducer,
     secondCurrencyClickToEnter: secondCurrencyClickToEnterReducer,
     sendNumberValue: sendNumberValueReducer,
+    cryptosPrice: cryptosPriceReducer,
+    convertValue: convertValueReducer,
 })

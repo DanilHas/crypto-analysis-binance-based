@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import { useDispatch, useSelector } from "react-redux";
 import { INIT_SEND_NUMBER_VALUE } from "../store/actions";
 
-export default function CurrencyInputNumber() {
+export default function CurrencyInputNumber(props) {
   const dispatch = useDispatch();
 
   const getNumberValue = (event) => {
@@ -15,6 +15,7 @@ export default function CurrencyInputNumber() {
   };
 
   const numberValue = useSelector((state) => state.sendNumberValue);
+  const {handleConvertation} = props;
 
   return (
     <Box
@@ -24,6 +25,7 @@ export default function CurrencyInputNumber() {
       }}
       noValidate
       autoComplete="off"
+      onSubmit={handleConvertation}
     >
       <TextField
           id="outlined-number"

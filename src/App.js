@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import VerticalTabs from "./Components/VerticalTabs";
 import { getCryptos } from "./store/getCryptos-thunk";
 import { useDispatch } from "react-redux";
+import { getCryptosPrice } from "./store/getCryptosPrice-thunk";
 
 
 
@@ -11,7 +12,11 @@ function App() {
 
   useEffect(() => {
     dispatch(getCryptos());
-  }, [dispatch]); 
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getCryptosPrice());
+  }, [dispatch]);
 
   return (
     <div className="App">
